@@ -7,3 +7,4 @@ services:
       - 8080:8080
     volumes:
       - './jenkins_home:/var/jenkins_home'
+      - './scripts:/tmp/scripts'
