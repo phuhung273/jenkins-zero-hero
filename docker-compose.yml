@@ -8,3 +8,11 @@ services:
     volumes:
       - './jenkins_home:/var/jenkins_home'
       - './scripts:/tmp/scripts'
+
+  remote_host:
+    container_name: remote_host
+    image: remote_host
+    build:
+      context: agent
+    volumes:
+      - './scripts:/tmp/scripts'
