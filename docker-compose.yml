@@ -6,8 +6,8 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - './jenkins_home:/var/jenkins_home'
-      - './scripts:/tmp/scripts'
+      - ./jenkins_home:/var/jenkins_home
+      - ./scripts:/tmp/scripts
 
   remote_host:
     container_name: remote_host
@@ -16,3 +16,11 @@ services:
       context: agent
     volumes:
       - './scripts:/tmp/scripts'
+
+  db_host:
+    container_name: db_host
+    image: mysql:5.7
+    environment:
+      - "MYSQL_ROOT_PASSWORD=1234"
+    volumes:
+      - ./db_data:/var/lib/mysql
