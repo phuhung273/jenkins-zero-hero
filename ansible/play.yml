@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: test1
   tasks:
     - debug:
         msg: "{{ MSG }}"
